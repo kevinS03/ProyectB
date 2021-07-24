@@ -11,6 +11,6 @@ export class CuentasService {
 
   getCuentas(){
 	  
-	return this.cuentaList = this.angularDatabase.list('Cuentas');
+	return this.cuentaList = this.angularDatabase.list('cuentas');
 }
 }

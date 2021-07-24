@@ -11,17 +11,24 @@
 		<ion-infinite-scroll-content
 		  loadingSpinner="bubbles"
 		  loadingText="Loading more data...">
-		  <ion-card >
-			<ion-card-header>
-			  <ion-card-subtitle>Nombre cuenta</ion-card-subtitle>
-			</ion-card-header>
+		  <ion-grid>
+			<ion-row>
+			  <ion-col *ngFor="let cuentas of cuentalista">
+				<ion-card >
+					<ion-card-header>
+					  <ion-card-subtitle>{{cuentas.nombre_cuenta}}</ion-card-subtitle>
+					</ion-card-header>
+				  
+					<ion-card-content>
+					  <ion-card-title>{{cuentas.numero_cuenta}}</ion-card-title>
+					  <ion-card-subtitle>{{cuentas.saldo_disponible}}</ion-card-subtitle>
+					</ion-card-content>
+			  
+				</ion-card>
+			  </ion-col>
+			</ion-row>
+		  </ion-grid>
 		  
-			<ion-card-content>
-			  <ion-card-title>90820212</ion-card-title>
-			  <ion-card-subtitle>Saldo disponible:</ion-card-subtitle>
-			</ion-card-content>
-	  
-		</ion-card>
 		</ion-infinite-scroll-content>
 	  </ion-infinite-scroll>
 	  
