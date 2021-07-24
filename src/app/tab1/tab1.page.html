@@ -7,16 +7,23 @@
   </ion-header>
   
   <ion-content [fullscreen]="true">
-	  <ion-card >
-		  <ion-card-header>
-			<ion-card-subtitle>Nombre cuenta</ion-card-subtitle>
-		  </ion-card-header>
-		
-		  <ion-card-content>
-			<ion-card-title>90820212</ion-card-title>
-			<ion-card-subtitle>Saldo disponible:</ion-card-subtitle>
-		  </ion-card-content>
-	
-	  </ion-card>
+	<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+		<ion-infinite-scroll-content
+		  loadingSpinner="bubbles"
+		  loadingText="Loading more data...">
+		  <ion-card >
+			<ion-card-header>
+			  <ion-card-subtitle>Nombre cuenta</ion-card-subtitle>
+			</ion-card-header>
+		  
+			<ion-card-content>
+			  <ion-card-title>90820212</ion-card-title>
+			  <ion-card-subtitle>Saldo disponible:</ion-card-subtitle>
+			</ion-card-content>
+	  
+		</ion-card>
+		</ion-infinite-scroll-content>
+	  </ion-infinite-scroll>
+	  
   </ion-content>
   
