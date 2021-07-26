@@ -12,7 +12,13 @@ export class Tab1Page implements OnInit{
 
 	constructor(public cuentasService: CuentasService) {}
 	ngOnInit(){
-		 this.cuentasService.getCuentas().snapshotChanges().subscribe(item =>{
+		this.mostrar();
+	}
+	ionViewDidEnter(){
+		this.mostrar();
+	  }
+	mostrar(){
+		this.cuentasService.getCuentas().snapshotChanges().subscribe(item =>{
 			this.cuentalista = [];
 			item.forEach(element =>{
 				let x = element.payload.toJSON();

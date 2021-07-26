@@ -10,18 +10,20 @@
 	  <ion-list>
 		  <ion-item>
 			<ion-label>Cuenta origen</ion-label>
-			<ion-select value="Navidad" okText="Okay" cancelText="Dismiss">
-			  <ion-select-option value="Navidad">Navidad</ion-select-option>
-			  <ion-select-option value="Planilla">Planilla</ion-select-option>
+			<ion-select  okText="Okay" cancelText="Dismiss">
+			  <ion-select-option *ngFor="let cuentas of cuentalista">
+				  <ion-text>
+					{{cuentas.nombre_cuenta}}
+				  </ion-text>
+			  </ion-select-option>
 			</ion-select>
 		  </ion-item>
 		
 		  <ion-item>
 			<ion-label>Cuenta destino</ion-label>
-			<ion-select value="Navidad" okText="Okay" cancelText="Dismiss">
-			  <ion-select-option value="Navidad">Navidad</ion-select-option>
-			  <ion-select-option value="Planilla">Planilla</ion-select-option>
-			</ion-select>
+			<ion-select  okText="Okay" cancelText="Dismiss">
+				<ion-select-option *ngFor="let cuentas of cuentalista">{{cuentas.nombre_cuenta}}</ion-select-option>
+			  </ion-select>
 		  </ion-item>
 		  <ion-item>
 			  <ion-label>Monto: $</ion-label>
